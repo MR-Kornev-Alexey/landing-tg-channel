@@ -5,7 +5,6 @@ import Check from "../assets/images/Svg/double-check.svg";
 
 const Price = () => {
     const apply = [
-        "Подписка на 1 месяц",
         "Все материалы канала, включая Библиотеку материнства и доступ к новым публикациям, а также возможность предлагать свои темы для разбора и пополнения Библиотеки\n",
         "Доступ к чату с Еленой Корневой (открывается раз в неделю) + к вебинару «Вопрос-ответ» (не менее 1 раза в месяц)\n",
         "9 вебинаров по развитию детей от 0 до 24 месяцев + вебинар «Как простыми действиями помочь малышу вырасти многогранной личностью»\n",
@@ -21,7 +20,7 @@ const Price = () => {
                 <div className="grid lg:grid-cols-2 items-center justify-items-center gap-5">
                     <div className="order-2 lg:order-1 flex flex-col justify-start items-start"
                          data-aos="slide-right">
-                        <h2 className="mt-2 title ">и получите</h2>
+                        <h2 className="mt-2 title ">и получите на время действия подписки:</h2>
                         {apply.map((element, index) =>
                             <div className="flex justify-center items-center" key={index}>
                                 <img className="h-[25px]" src={Check} alt="baby_banner"/>
@@ -41,7 +40,7 @@ const Price = () => {
                     </div>
                 </div>
                 <div className="flex flex-col justify-center items-center "  data-aos="fade-up">
-                    <h4 className="mt-2 lg:text-3xl md:text-lg ">1200 рублей
+                    <h4 className="mt-2 lg:text-3xl md:text-lg ">1200 ₽/месяц
                     </h4>
                     <a href="https://payform.ru/d63Domf/" target="_blank">
                         <button className="btn mb-2">Купить</button>
