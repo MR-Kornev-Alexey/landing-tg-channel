@@ -1,10 +1,9 @@
 import { useState } from "react";
-import { content } from "../Content";
 import { HiMenuAlt2 } from "react-icons/hi";
 import { createElement } from "react";
 import {TbSmartHome} from "react-icons/tb";
 import {BiUser} from "react-icons/bi";
-import {RiProjectorLine, RiServiceLine} from "react-icons/ri";
+import {RiServiceLine} from "react-icons/ri";
 import {MdOutlinePermContactCalendar} from "react-icons/md";
 import { FaShoppingCart } from "react-icons/fa";
 import { MdDateRange } from "react-icons/md";

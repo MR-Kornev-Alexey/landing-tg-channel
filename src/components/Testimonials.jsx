@@ -91,15 +91,16 @@ const Testimonials= () => {
             Отзывы
           </h2>
         </div>
-        <div className="flex items-center justify-center">
+        <div className="flex items-center justify-center"  data-aos="fade-left">
           <Swiper
             pagination={{
               clickable: true,
             }}
-            data-aos="fade-left"
+
             spaceBetween={20}
             modules={[Pagination]}
             className="rounded-3xl pb-16 max-w-xl drop-shadow-primary self-center"
+
           >
             {images.map((content, i) => (
               <SwiperSlide

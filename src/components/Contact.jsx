@@ -1,5 +1,3 @@
-import {content} from "../Content";
-
 const description = [
     {
         id: 0,
@@ -42,14 +40,12 @@ const Contact = () => {
             <div className="md:container px-5 ">
                 <div className="flex gap-10 md:flex-row flex-col pt-4">
                   <div className="mt-10 p-6 lg:grid lg:grid-cols-2 lg:gap-8">
-                    <div className="block p-6 mb-6 bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:hover:bg-gray-700 hover:bg-gray-100 dark:border-gray-700 lg:mb-0">
+                    <div className="block p-6 mb-6 bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:hover:bg-gray-700 hover:bg-gray-100 dark:border-gray-700 lg:mb-0"  data-aos="fade-in"  data-aos-delay={300}>
                       <h3 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">Контакты</h3>
-                      <div className="font-normal text-gray-900 ">
+                      <div className="font-normal text-gray-900 "       >
                         {description.map((content, i) => (
                             <div
                                 key={i}
-                                data-aos="fade-in"
-                                data-aos-delay={i * 430}
                                 className="flex items-center gap-2 text-gray-900 "
                             >
                               <a className="font-Lato text-gray-900" href={content.link} target="_blank">
@@ -59,14 +55,12 @@ const Contact = () => {
                         ))}
                       </div>
                     </div>
-                    <div  className="block p-6 mb-6 bg-white border border-gray-200 rounded-lg shadow-md hover:bg-gray-100  lg:mb-0">
+                    <div  className="block p-6 mb-6 bg-white border border-gray-200 rounded-lg shadow-md hover:bg-gray-100  lg:mb-0"  data-aos="fade-in"  data-aos-delay={400}>
                       <h3 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">Информация</h3>
                       <div className="font-normal">
                         {legal.map((content, i) => (
                             <div
                                 key={i}
-                                data-aos="fade-in"
-                                data-aos-delay={i * 430}
                                 className="flex items-center gap-2 text-gray-900 "
                             >
                               <a className="font-normal" href={content.link} target="_blank">
