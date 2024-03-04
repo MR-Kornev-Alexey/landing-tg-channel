@@ -22,7 +22,7 @@ const customStyles = {
 Modal.setAppElement("#root");
 
 
-const Hireme = () => {
+const Library = () => {
     const [modalIsOpen, setIsOpen] = useState(false);
 
     function openModal() {
@@ -34,7 +34,7 @@ const Hireme = () => {
     }
 
     return (
-        <section className="bg-bg_light_primary">
+        <section className="bg-bg_light_primary" id="library">
             <Modal
                 isOpen={modalIsOpen}
                 onRequestClose={closeModal}
@@ -60,12 +60,9 @@ const Hireme = () => {
                 </div>
             </Modal>
             <div className="md:container px-5 pt-8">
-                <div>
-                    <h2 className="title" data-aos="fade-down">
-                        Библиотека материнства
-                    </h2>
-                    <br />
-                </div>
+                <h2 className="title mb-6" data-aos="fade-down">
+                    Библиотека материнства
+                </h2>
                 <div className="flex items-center md:flex-row flex-col-reverse ">
                     <img
                         src={babyRight}
@@ -81,8 +78,7 @@ const Hireme = () => {
                     />
                     <div
                         data-aos="fade-left"
-                        className="border-2 border-dark_primary max-w-md
-           p-6 shadow-sm rounded-xl rounded-br-[8rem] sm:min-w-[22rem]"
+                        className="ml-4 border-2 border-dark_primary max-w-md p-6 shadow-sm rounded-xl rounded-br-[8rem] sm:min-w-[22rem]"
                     >
                         <span className="leading-7 pb-6">На время подписки вы получаете доступ к закрытой и постоянно пополняющейся библиотеке с актуальными материалами по материнству, развитию, здоровью и детству</span>
                         <br/>
@@ -98,4 +94,4 @@ const Hireme = () => {
     );
 };
 
-export default Hireme;
+export default Library;

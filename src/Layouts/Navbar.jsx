@@ -2,9 +2,41 @@ import { useState } from "react";
 import { content } from "../Content";
 import { HiMenuAlt2 } from "react-icons/hi";
 import { createElement } from "react";
+import {TbSmartHome} from "react-icons/tb";
+import {BiUser} from "react-icons/bi";
+import {RiProjectorLine, RiServiceLine} from "react-icons/ri";
+import {MdOutlinePermContactCalendar} from "react-icons/md";
+import { FaShoppingCart } from "react-icons/fa";
+import { MdDateRange } from "react-icons/md";
+const nav=  [
+    {
+        link: "#home",
+        icon: TbSmartHome,
+    },
+    {
+        link: "#price",
+        icon: FaShoppingCart,
+    },
+    {
+        link: "#author",
+        icon: BiUser,
+    },
+    {
+        link: "#services",
+        icon: RiServiceLine,
+    },
+    {
+        link: "#schedule",
+        icon: MdDateRange,
+    },
+    {
+        link: "#contact",
+        icon: MdOutlinePermContactCalendar,
+    },
+]
 
 const Navbar = () => {
-  const { nav } = content;
+  // const { nav } = content;
   const [showMenu, setShowMenu] = useState(false);
   const [active, setActive] = useState(0);
 
@@ -23,6 +55,7 @@ const Navbar = () => {
       >
         {nav.map((item, i) => (
           <a
+              key={i}
             href={item.link}
             onClick={() => setActive(i)}
             className={`text-xl p-2.5 rounded-full sm:cursor-pointer 

@@ -1,9 +1,4 @@
-/* Inria serif */
-@import url("https://fonts.googleapis.com/css2?family=Inria+Serif:wght@700&display=swap");
-/* Poppins */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
-/* Paprika */
-@import url("https://fonts.googleapis.com/css2?family=Paprika&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -21,40 +16,43 @@
   h6,
   p,
   span {
-    @apply text-dark_primary;
+    @apply text-dark_primary font-Lato;
   }
   h1 {
-    @apply font-Poppins lg:text-6xl text-3xl font-extrabold;
+    @apply font-Lato lg:text-6xl text-3xl font-extrabold;
   }
   h2 {
-    @apply font-Inria text-5xl font-bold;
+    @apply font-Lato font-bold leading-[3rem];
   }
   h3 {
-    @apply font-Paprika text-5xl;
+    @apply font-Lato text-5xl;
   }
   h4 {
-    @apply md:text-4xl text-3xl !leading-relaxed font-Paprika;
+    @apply font-Lato md:text-4xl text-3xl !leading-relaxed;
   }
   h6 {
-    @apply font-Paprika font-bold text-[#253D57] leading-8;
+    @apply font-Lato font-bold text-[#253D57] leading-8;
   }
 
   p {
-    @apply font-Poppins text-[0.95rem];
+    @apply font-Lato text-[0.95rem];
   }
   button {
-    @apply font-Poppins;
+    @apply font-Lato;
   }
   input,
   textarea {
-    @apply bg-transparent outline-none font-Poppins;
+    @apply bg-transparent outline-none font-Lato;
   }
 }
 
 @layer utilities {
+  .font-Lato {
+    font-family: 'Lato', sans-serif;
+  }
   .btn {
-    @apply py-2 px-9 border-2 rounded-md
-     border-dark_primary rounded-br-3xl font-medium;
+    @apply py-2 px-9 border-2 rounded-md uppercase
+    border-dark_primary rounded-br-3xl font-medium w-[220px] min-h-[46px];
   }
   .title {
     @apply md:text-3xl text-2xl;
@@ -65,4 +63,27 @@
 }
 .swiper-pagination-bullet {
   @apply w-3 h-3 bg-dark_primary;
+}
+
+/* Стили для описания, чтобы показывать только две строки */
+summary {
+  max-height: 3.6em !important; /* Устанавливаем максимальную высоту в 2 строки текста */
+  overflow: hidden !important;  /* Скрываем избыточное содержимое */
+  cursor: pointer; /* Добавляем курсор при наведении */
+}
+
+/* Стилизуем аккордеон при раскрытии */
+details[open] summary ~ * {
+  animation: openDetails 0.3s ease forwards;
+}
+
+@keyframes openDetails {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

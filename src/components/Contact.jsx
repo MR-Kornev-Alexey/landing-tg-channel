@@ -1,101 +1,90 @@
-import { createElement, useRef } from "react";
-import { content } from "../Content";
-import emailjs from "@emailjs/browser";
-import toast, { Toaster } from "react-hot-toast";
+import {content} from "../Content";
+
+const description = [
+    {
+        id: 0,
+        text: 'elenakorneva.ru',
+        link: 'https://elenakorneva.ru'
+    },
+    {
+        id: 1,
+        text: 'WhatsApp',
+        link: 'https://wa.me/4917625187846?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5...'
+    },
+    {
+        id: 2,
+        text: 'Telegram',
+        link: 'https://t.me/korneva_elena'
+    },
+    {
+        id: 3,
+        text: 'info@mrk.digital',
+        link: 'mailto:info@mrk.digital'
+    }
+]
+const legal = [
+    {
+        id: 0,
+        text: 'Политика конфидициальности',
+        link: 'https://elenakorneva.ru/privacy'
+    },
+    {
+        id: 2,
+        text: 'Пользовательское соглашение',
+        link: 'https://elenakorneva.ru/terms'
+    }
+]
+
 
 const Contact = () => {
-  const { Contact } = content;
-  const form = useRef();
-
-  // Sending Email
-  const sendEmail = (e) => {
-    e.preventDefault();
-
-    emailjs
-      .sendForm(
-      'YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, 'YOUR_PUBLIC_KEY'
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-          // Clear all input field values
-          form.current.reset();
-          // Success toast message
-          toast.success("Email send Successfully");
-        },
-        (error) => {
-          console.log(error.text);
-          toast.error(error.text);
-        }
-      );
-  };
-
-  return (
-    <section className="bg-dark_primary text-white" id="contact">
-      <Toaster />
-      <div className="md:container px-5 py-14">
-        <h2 className="title !text-white" data-aos="fade-down">
-          {Contact.title}
-        </h2>
-        <h4 className="subtitle" data-aos="fade-down">
-          {Contact.subtitle}
-        </h4>
-        <br />
-        <div className="flex gap-10 md:flex-row flex-col">
-          <form
-            ref={form}
-            onSubmit={sendEmail}
-            data-aos="fade-up"
-            className="flex-1 flex flex-col gap-5"
-          >
-            {/* Input Name as same as email js templates values */}
-            <input
-              type="text"
-              name="from_name"
-              placeholder="Name"
-              required
-              className="border border-slate-600 p-3 rounded"
-            />
-            <input
-              type="email"
-              name="user_email"
-              pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$"
-              placeholder="Email Id"
-              required
-              className="border border-slate-600 p-3 rounded"
-            />
-            <textarea
-              name="message"
-              placeholder="Message"
-              className="border border-slate-600 p-3 rounded h-44"
-              required
-            ></textarea>
-            <button
-              className="btn self-start
-            bg-white text-dark_primary"
-            >
-              Submit
-            </button>
-          </form>
-          <div className="flex-1 flex flex-col gap-5">
-            {Contact.social_media.map((content, i) => (
-              <div
-                key={i}
-                data-aos="fade-down"
-                data-aos-delay={i * 430}
-                className="flex items-center gap-2"
-              >
-                <h4 className="text-white">{createElement(content.icon)}</h4>
-                <a className="font-Poppins" href={content.link} target="_blank">
-                  {content.text}
-                </a>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
+    return (
+        <section className="bg-dark_primary" id="contact">
+            <div className="md:container px-5 ">
+                <div className="flex gap-10 md:flex-row flex-col pt-4">
+                  <div className="mt-10 p-6 lg:grid lg:grid-cols-2 lg:gap-8">
+                    <div className="block p-6 mb-6 bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:hover:bg-gray-700 hover:bg-gray-100 dark:border-gray-700 lg:mb-0">
+                      <h3 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">Контакты</h3>
+                      <div className="font-normal text-gray-900 ">
+                        {description.map((content, i) => (
+                            <div
+                                key={i}
+                                data-aos="fade-in"
+                                data-aos-delay={i * 430}
+                                className="flex items-center gap-2 text-gray-900 "
+                            >
+                              <a className="font-Lato text-gray-900" href={content.link} target="_blank">
+                                {content.text}
+                              </a>
+                            </div>
+                        ))}
+                      </div>
+                    </div>
+                    <div  className="block p-6 mb-6 bg-white border border-gray-200 rounded-lg shadow-md hover:bg-gray-100  lg:mb-0">
+                      <h3 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">Информация</h3>
+                      <div className="font-normal">
+                        {legal.map((content, i) => (
+                            <div
+                                key={i}
+                                data-aos="fade-in"
+                                data-aos-delay={i * 430}
+                                className="flex items-center gap-2 text-gray-900 "
+                            >
+                              <a className="font-normal" href={content.link} target="_blank">
+                                {content.text}
+                              </a>
+                            </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <footer className="p-3 text-center">
+                <h6 className="mb-3 text-white">Елена Корнева</h6>
+                <p className="text-white">MRK Digital© All CopyRights Reserved 2022</p>
+            </footer>
+        </section>
+    );
 };
 
 export default Contact;

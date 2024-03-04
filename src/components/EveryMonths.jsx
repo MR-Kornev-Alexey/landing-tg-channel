@@ -16,7 +16,7 @@ const every_months = [
     }
 ]
 
-const Skills = () => {
+const EveryMonth = () => {
     useEffect(() => {
         const containers = document.querySelectorAll('.equal-height-container');
         containers.forEach(container => {
@@ -33,26 +33,31 @@ const Skills = () => {
         });
     }, [every_months]);
     return (
-        <section className="min-h-fit bg-bg_light_primary" id="skills">
-            <div className="md:container px-5  pt-14">
-                <h2 className="title text-gray-600" data-aos="fade-down">
+        <section className="min-h-fit bg-bg_light_primary" id="every_month">
+            <div className="md:container px-5 pt-8">
+                <h2 className="title mb-6" data-aos="fade-down">
                     Ежемесячно на канале:
                 </h2>
                 <div className="max-w-screen-xl mx-auto py-8 px-4 lg:py-16 lg:px-6">
                     <div className="flex flex-col md:flex-row">
                         <div className="mr-0 md:mr-8 mb-6 md:mb-0">
                             <img data-aos="slide-right"
-                                 className="lg:w-[500px] lg:h-auto md:w-[310px] md:h-[300px] mx-auto"
+                                 className="lg:w-[450px] lg:h-auto md:w-[310px] md:h-[300px] mx-auto"
                                  src={BabyRight}
-                                 alt="baby_banner"/>
+                                 alt="baby banner every months"/>
                         </div>
 
                         <div className="flex-1 flex flex-col sm:flex-row flex-wrap -mb-4 -mx-2">
                             {every_months.map((element, index) => (
-                                <div className="w-full sm:w-1/2 mb-4 px-2 equal-height-container" key={index}
+                                <div className="w-full sm:w-1/2 mb-4 px-2 equal-height-container relative" key={index}
                                      data-aos="slide-left"
                                      data-aos-delay={index * 200}>
-                                    <div className="lg:h-[200px] md:h-[160px] sm:h-[160px] py-4 px-6 border border-blue-500 border-t-0 border-l-0 rounded-br-xl flex justify-center items-center equal-height-item">
+                                    <div className="absolute -inset-1">
+                                        <div
+                                            className="w-full h-full rotate-180 opacity-30 blur-lg filter bg-gradient-to-r from-blue-400 via-violet-500 to-green-700">
+                                        </div>
+                                    </div>
+                                    <div className="lg:h-[200px] p-4 relative overflow-hidden bg-white flex justify-center items-center equal-height-item">
                                         <p className="mt-6 text-base text-gray-600">{element.description}</p>
                                     </div>
                                 </div>
@@ -70,4 +75,4 @@ const Skills = () => {
     );
 };
 
-export default Skills;
+export default EveryMonth;

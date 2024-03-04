@@ -1,5 +1,5 @@
 // import images
-import Hero_person from "./assets/images/Hero/person.png";
+import Hero_person from "./assets/images/Hero/avatar-900.png";
 
 import figma from "./assets/images/Skills/figma.png";
 import sketch from "./assets/images/Skills/sketch.png";
@@ -59,8 +59,8 @@ export const content = {
   ],
   hero: {
     title: "Web Developer",
-    firstName: "JOHN",
-    LastName: "ALEX",
+    firstName: "Елена",
+    LastName: "Корнева",
     btnText: "Hire Me",
     image: Hero_person,
     hero_content: [
@@ -70,7 +70,7 @@ export const content = {
       },
       {
         count: "20+",
-        text: "Projects Worked in my career",
+        text: "projects Worked in my career",
       },
     ],
   },
@@ -116,8 +116,8 @@ export const content = {
     subtitle: "WHAT I OFFER",
     service_content: [
       {
-        title: "Web Development",
-        para: "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document elying on mean",
+        title: "",
+        para: "Ищете надежную информацию по материнству, развитию и здоровью малыша, и вам важно иметь возможность получить проверенную и точную информацию",
         logo: services_logo1,
       },
       {
