@@ -1,64 +1,120 @@
-import { content } from "../Content";
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
+import img1 from "../assets/images/FeedbackImg/Image03.jpg"
+import img2 from "../assets/images/FeedbackImg/Image01.jpg"
+import img3 from "../assets/images/FeedbackImg/Image05.jpg"
+import img4 from "../assets/images/FeedbackImg/Image09.jpg"
+import img5 from "../assets/images/FeedbackImg/Image12.jpg"
+import img6 from "../assets/images/FeedbackImg/Image16.jpg"
+import img7 from "../assets/images/FeedbackImg/Image17.jpg"
+import img8 from "../assets/images/FeedbackImg/Image18.jpg"
+import img9 from "../assets/images/FeedbackImg/Image22.jpg"
+import img10 from "../assets/images/FeedbackImg/Image25.jpg"
+import img11 from "../assets/images/FeedbackImg/Image29.jpg"
+import img12 from "../assets/images/FeedbackImg/Image32.jpg"
+import img13 from "../assets/images/FeedbackImg/Image33.jpg"
+import img14 from "../assets/images/FeedbackImg/Image36.jpg"
+import img15 from "../assets/images/FeedbackImg/Image41.jpg"
 
+const images = [
+  {
+    label: 'Надежда',
+    imgPath: img1
+  },
+  {
+    label: 'Ксения П.',
+    imgPath: img2
+  },
+  {
+    label: 'Nastya',
+    imgPath: img3
+  },
+  {
+    label: 'Лейсан',
+    imgPath: img4
+  },
+  {
+    label: 'Анастасия',
+    imgPath: img5
+  },
+  {
+    label: 'Smex',
+    imgPath: img6
+  },
+  {
+    label: 'Alenka',
+    imgPath: img7
+  },
+  {
+    label: 'Александра Ф.',
+    imgPath: img8
+  },
+  {
+    label: 'Дарья',
+    imgPath: img9
+  },
+  {
+    label: 'Мария',
+    imgPath: img10
+  },
+  {
+    label: 'Ani M.',
+    imgPath: img11
+  },
+  {
+    label: 'Дарья',
+    imgPath: img12
+  },
+  {
+    label: 'Асель',
+    imgPath: img13
+  },
+  {
+    label: 'Наталья',
+    imgPath: img14
+  },
+  {
+    label: 'Марина П.',
+    imgPath: img15
+  }
+];
 import { Pagination } from "swiper";
-import { useState } from "react";
 
-const Testimonials = () => {
-  const { Testimonials } = content;
-  const [activeIndex, setActiveIndex] = useState(0);
+const Feedbacks= () => {
   return (
-    <section>
-      <div className="md:container px-5 pt-14">
-        <h2 className="title" data-aos="fade-down">
-          {Testimonials.title}
-        </h2>
-        <h4 className="subtitle" data-aos="fade-down">
-          {Testimonials.subtitle}
-        </h4>
-        <br />
-        <Swiper
-          direction={"vertical"}
-          pagination={{
-            clickable: true,
-          }}
-          data-aos="fade-up"
-          loop={true}
-          spaceBetween={40}
-          slidesPerView={1.7}
-          onSlideChange={(e) => {
-            console.log(e.realIndex);
-            setActiveIndex(e.realIndex);
-          }}
-          modules={[Pagination]}
-          className="md:h-96 h-[40rem] max-w-3xl"
-        >
-          {Testimonials.testimonials_content.map((content, i) => (
-            <SwiperSlide key={i}>
-              <div
-                className={` duration-500 bg-bg_light_primary mx-8 border-2 
-              p-8 h-full rounded-2xl flex items-center gap-6
-               border-slate-200 md:flex-row flex-col
-                ${activeIndex !== i && "scale-75 blur-sm"}`}
+    <section className="bg-bg_light_primary" id="clients">
+      <div className="md:container px-5 pt-9 flex flex-col justify-between">
+        <div>
+          <h2 className="title" data-aos="fade-down">
+            Отзывы
+          </h2>
+        </div>
+        <div className="flex items-center justify-center">
+          <Swiper
+            pagination={{
+              clickable: true,
+            }}
+            data-aos="fade-left"
+            spaceBetween={20}
+            modules={[Pagination]}
+            className="rounded-3xl pb-16 max-w-xl drop-shadow-primary self-center"
+          >
+            {images.map((content, i) => (
+              <SwiperSlide
+                key={i}
+                className="bg-white rounded-3xl p-5 border-b-8 border-[#FAF9FD] h-3xl "
               >
-                <img src={content.img} alt="..." className="h-24" />
-                <div>
-                  <p className="sm:text-base text-sm">{content.review}</p>
-                  <br />
-                  <h6>{content.name}</h6>
-                </div>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+                <span className="lg:text-xl md:text-md">{content.label}</span>
+                <img src={content.imgPath} alt={content.label} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
       </div>
     </section>
   );
 };
 
-export default Testimonials;
+export default Feedbacks;
