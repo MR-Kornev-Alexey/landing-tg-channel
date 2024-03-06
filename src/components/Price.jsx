@@ -20,7 +20,7 @@ const Price = () => {
                 <div className="grid lg:grid-cols-2 items-center justify-items-center gap-5">
                     <div className="order-2 lg:order-1 flex flex-col justify-start items-start"
                          data-aos="slide-right">
-                        <h2 className="mt-2 title ">и получите на время действия подписки:</h2>
+                        <h2 className="mt-2">и получите на время действия подписки:</h2>
                         {apply.map((element, index) =>
                             <div className="flex justify-center items-center" key={index}>
                                 <img className="h-[25px]" src={Check} alt="baby_banner"/>
@@ -40,9 +40,9 @@ const Price = () => {
                     </div>
                 </div>
                 <div className="flex flex-col justify-center items-center "  data-aos="fade-up">
-                    <h4 className="mt-2 lg:text-3xl md:text-lg ">1200 ₽/месяц
+                    <h4 className="mt-2 lg:text-3xl md:text-lg ">1550 ₽/месяц
                     </h4>
-                    <a href="https://payform.ru/d63Domf/" target="_blank">
+                    <a href="http://t.me/helen_korneva_channel_bot" target="_blank">
                         <button className="btn mb-2">Купить</button>
                     </a>
                 </div>

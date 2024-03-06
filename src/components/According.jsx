@@ -15,7 +15,7 @@ const According = ({date, title, description}) => {
             <div className="group relative overflow-hidden bg-white" >
                 <div className="flex items-center px-4 marker:content-none bg-white ">
                     <div className="flex flex-col bg-white ">
-                        <p dangerouslySetInnerHTML={{__html: date}} className="text-xl"/>
+                        <p dangerouslySetInnerHTML={{__html: date}} className="text-xl my-3"/>
                         <span dangerouslySetInnerHTML={{__html: title}}  className="lg:text-xl md:text-md " />
                     </div>
                 </div>

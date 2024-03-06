@@ -1,6 +1,6 @@
 import React from 'react';
 
-import AuthorImg from "../assets/images/Hero/elena-main-green.png"
+import AuthorImg from "../assets/images/Hero/elena-round-avatar.png"
 import Check from "../assets/images/Svg/double-check.svg"
 
 const Author = () => {

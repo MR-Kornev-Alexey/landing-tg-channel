@@ -19,7 +19,7 @@ const Hero = () => {
                     <p className="uppercase text-xl">
                         Закрытый Telegram-канал
                     </p>
-                    <h2 className="uppercase text-bold text-center lg:text-5xl  md:text-4xl  mobile:text-4xl">Материнство<br/>это
+                    <h2 className="uppercase text-bold text-center lg:text-5xl my-3 md:text-4xl  mobile:text-4xl">Материнство<br/>это
                         просто</h2>
                     <p className="text-xl">
                         Как вырастить здорового, счастливого ребенка и не сойти с ума

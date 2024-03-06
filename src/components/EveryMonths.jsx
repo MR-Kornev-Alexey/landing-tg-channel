@@ -67,9 +67,10 @@ const EveryMonth = () => {
                 </div>
             </div>
             <div className="flex flex-col md:flex-row md:justify-center items-center">
+            <a href="#price">
                 <button data-aos="fade-in"
                         data-aos-delay={1100} className="btn md:ml-1">Оплатить
-                </button>
+                </button></a>
             </div>
         </section>
     );
